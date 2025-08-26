@@ -5,9 +5,8 @@ def read_secret(secret: str):
         with open(f"/etc/secrets/{secret}", "r") as f:
             return f.read().rstrip()
     except Exception as e:
-        print("No token was provided")
-        print(e)
-        return ""
+        print("No token was provided as secret")
+        return os.environ.get("DT_TOKEN", "")
 
 def init():
     os.environ['TRACELOOP_TELEMETRY'] = "false"

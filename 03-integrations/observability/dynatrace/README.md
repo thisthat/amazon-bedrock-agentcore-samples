@@ -44,6 +44,33 @@ Ensure your account has access to the model `eu.anthropic.claude-3-7-sonnet-2025
 [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-permissions.html) to see how to enable access to the model.
 You can change the model used by configuring the environment variable `BEDROCK_MODEL_ID`.
 
+### Setting your Dynatrace Token
+
+Create a [Free Dynatrace Trial](https://www.dynatrace.com/signup/) for 15 days.
+After a few minutes, you will get redirected to your tenant. The URL will look like `https://wkf10640.apps.dynatrace.com/`.
+The value `wkf10640` is your environment id which will be needed later.
+
+After that, you can create an Access Token:
+
+1. In Dynatrace, go to **Access Tokens**. To find **Access Tokens**, press **Ctrl/Cmd+K** to search for and select **Access Tokens**.
+2. In **Access Tokens**, select **Generate new token**.
+3. Enter a **Token name** for your new token.
+4. Give your new token the following permissions:
+5. Search for and select all of the following scopes.
+    * **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`)
+    * **Ingest logs** (`logs.ingest`)
+    * **Read metrics** (`metrics.read`)
+6. Select **Generate token**.
+7. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+
+
+Afterwards, you can set your Dynatrace information in your environment variables by running the following command in your terminal:
+
+```bash
+export DT_TOKEN==your_access_token
+export OTEL_ENDPOINT==https://{your-environment-id}.live.dynatrace.com/api/v2/otlp
+```
+
 
 ### Run the app
 
