@@ -2,7 +2,6 @@
 
 This example contains a demo of a Personal Assistant Agent built on top of [Bedrock AgentCore Agents](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html).
 
-![Tracing](./dynatrace.png)
 
 ## Prerequisites
 
@@ -49,3 +48,7 @@ You can change the model used by configuring the environment variable `BEDROCK_M
 ### Run the app
 
 `uv run main.py`
+
+Now you have full observability of your Bedrock AgentCore Agents in Dynatrace 🚀
+
+![Tracing](./dynatrace.png)
