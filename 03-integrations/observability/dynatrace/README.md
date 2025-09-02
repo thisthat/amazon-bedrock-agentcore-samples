@@ -74,7 +74,15 @@ export OTEL_ENDPOINT==https://{your-environment-id}.live.dynatrace.com/api/v2/ot
 
 ### Run the app
 
-`uv run main.py`
+You can start the example with the following command: `uv run main.py`
+
+This will create an HTTP server that listens on the port `8080` that implements the required `/invocations` endpoint for processing the agent's requirements.
+
+You can interact with your agent with the following command:
+
+```bash
+curl -X POST http://127.0.0.1:8080/invocations --data '{"prompt": "What is the weather now?"}'
+```
 
 Now you have full observability of your Bedrock AgentCore Agents in Dynatrace 🚀
 
